@@ -1,0 +1,446 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    background: #FFFFFF;
+}
+
+/* 
+1. Не стала тут делать общий грид контейнер для всех, так как страница большая, сделала для больших и значимых блоков грид контейнеры;
+2. На этой странице левые и правые отступы и отступы внутри колонок/рядов (в большинстве случаев) задавала не паддингами, а пустыми грид колонками внутри грид контейнеров. В случае пустой ячейки ставила "." (выглядит "мудренно). В связи с чем вопрос: стоит ли так делать или лучше все-таки внутренние отступы задавать паддингами? 
+3. Не понимаю, почему между моими грид контейнерами бывает пустота, как между firstpage и secondpage, thirdpage и fourthpage, seventhpage и eightpage почему они не прилипли друг к другу, хотя никаких отступов я им не делала. Будто firstpage, thirdpage, seventhpage больше по размеру, чем их грид, хотя каждая такая page и есть грид контейнер.*/
+
+.container { 
+    width: 100vw;
+    height: 100vh;
+}
+
+/*----------------------------------------Header------------------------------------------------*/
+
+.header-container {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.2fr 1.5fr 0.2fr;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas: 
+        ". . . . ."
+        ". header-logo . header-nav .";
+}
+
+.header-logo {
+    grid-area: header-logo;
+}
+
+.header-nav {   
+    grid-area: header-nav;
+    display: grid;
+    grid-template-columns: repeat(4, auto);    
+    align-items: center;
+    justify-items: end;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: #6B7280;
+}
+
+.header-nav a:hover {
+    text-decoration: underline;
+}
+
+.header-nav button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 25px;
+    gap: 10px;
+    width: 131px;
+    height: 52px;    
+    background: #FFFFFF;
+    border: 1px solid #3730A3;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #3730A3;
+}
+
+
+/*----------------------------------------Main------------------------------------------------*/
+/*----------------------------------------Firstpage-------------------------------------------*/
+
+.firstpage {
+    display: grid;
+    grid-template-columns: 0.2fr 2fr 0.3fr 1fr 0.2fr;
+    grid-template-rows: 0.3fr 1fr 0.2fr;
+    grid-template-areas: 
+        ". . . . ."
+        ". about-desighner . fotodisaighner ."
+        ". . . . .";
+}
+
+.about-desighner {
+    grid-area: about-desighner;   
+}
+
+.fotodisaighner {
+    grid-area: fotodisaighner;    
+}
+
+.about-desighner h2 {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #4338CA;   
+}
+
+.about-desighner h1 {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 72px;
+    color: #1F2937;
+}
+
+.first-p {
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #6B7280;
+}
+
+.second-p {
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #6B7280;
+}
+
+.buttons-firstpage {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    column-gap: 20px;
+}
+
+button.hire-me {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 32px;
+    gap: 10px;
+    background: #3730A3;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #FFFFFF;
+}
+
+.read-more {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 32px;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 1px solid #3730A3;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+/*----------------------------------------Secondpage-------------------------------------------*/
+
+.secondpage {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 0.3fr;
+    grid-template-rows:  1fr 0.5fr;
+    grid-template-areas: 
+    ". mission ."
+    ". . .";
+}
+
+.mission {
+    grid-area: mission;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #1F2937;
+}
+
+.mission-colorstyle {
+    color: #3730A3;
+}
+
+/*----------------------------------------Thirdpage-------------------------------------------*/
+
+.thirdpage {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;   
+    grid-template-rows: 1fr 0.2fr;
+    grid-template-areas: 
+        ". disighnworks thirdpage-content-one thirdpage-content-two ."
+        ". . . . .";
+    column-gap: 3%;    
+}
+
+.disighnworks {
+    grid-area: disighnworks;
+}
+
+.thirdpage-content-one {
+    grid-area: thirdpage-content-one;
+    padding: 20px 0px 20px;
+    
+}
+
+.thirdpage-content-two {
+    grid-area: thirdpage-content-two;
+    padding: 20px 0px 20px;
+}
+
+.thirdpage section {
+    margin-bottom: 25%;
+}
+
+.thirdpage h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    color: #1F2937;
+}
+
+.activity{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #6B7280;
+}
+
+.seeworks {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #3730A3;
+}
+
+/*----------------------------------------Fourthpage-------------------------------------------*/
+
+.fourthpage {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    grid-template-rows: 0.5fr 0.5fr 2.5fr;
+    grid-template-areas: 
+        ". . ."     
+        ". trust-p ."
+        ".clients .";
+    background: #FEF2F2;  
+}
+
+.fourthpage p {
+    grid-area: trust-p;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #9CA3AF;    
+}
+
+.clients {
+    grid-area: clients;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-self: center;
+    justify-content: space-around;
+    
+}
+
+/*----------------------------------------Fifthpage-------------------------------------------*/
+
+.fifthpage {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    grid-template-areas: 
+    ". . ."
+    ". customerfeed ."
+    ". . .";
+}
+
+.customerfeed{
+    grid-area: customerfeed;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #1F2937;
+}
+
+/*----------------------------------------Sixpage-------------------------------------------*/
+
+.sixpage{
+    display: grid;
+    grid-template-columns: 0.2fr 2fr 1fr 0.2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". bus door ."
+    ". trees door ."
+    ". stick stick .";
+    gap: 2%;
+}
+
+.bus {
+    grid-area: bus;
+}
+
+.door {
+    grid-area: door;
+}
+
+.trees {
+    grid-area: trees;
+}
+
+.stick {
+    grid-area: stick;
+}
+
+/*----------------------------------------Seventhpage-------------------------------------------*/
+
+.seventhpage {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;  
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas: 
+        ". . . . ."
+        ". chart dollar loupe .";
+    text-align: center;
+    gap: 5%;    
+}
+
+.chart {
+    grid-area: chart;
+}
+
+.dollar {
+    grid-area: dollar;
+}
+
+.loupe {
+    grid-area: loupe;
+}
+
+.seventhpage h5 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: #374151;
+    margin-bottom: 20px;
+}
+
+.seventhpage p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #9CA3AF;
+} 
+
+/*----------------------------------------Eightpage-------------------------------------------*/
+
+.eightpage {
+    display:grid;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:         
+        ". career career career ."
+        ". company position year .";
+    text-align:start;
+    justify-items:center;
+}
+
+.career {
+    grid-area: career;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #1F2937;
+}
+
+.company {
+    grid-area: company;
+}
+
+.position {
+    grid-area: position;
+}
+
+.year {
+    grid-area: year;
+}
+
+.eightpage h5 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #6B7280;
+}
+
+.eightpage p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #6B7280;
+}
+
+.company-style {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #1F2937;
+}
+
+/*----------------------------------------Footer-------------------------------------------*/
+
+.footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 0.6fr 0.1fr 0.7fr;
+    grid-template-areas:     
+    ". contact ."
+    ". footer-p ."
+    ". . . "
+    ". networks .";
+    text-align: center;
+    background: #FEF2F2;
+}
+
+.footer h4 {
+    grid-area: contact;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #374151;
+}
+
+.footer p {
+    grid-area: footer-p;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+.networks {
+    grid-area: networks;
+}
